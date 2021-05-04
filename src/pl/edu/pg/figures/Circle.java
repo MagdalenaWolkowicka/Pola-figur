@@ -9,14 +9,13 @@ public class Circle implements Checkable, Visible {
 
     private double r;
     private double circleArea;
-    private double circleAreaRounded;
 
     @Override
     public void showAreaInfo() {
         questions();
         if (checkParameters()) {
             calculateCircleArea();
-            System.out.println("Pole koła równa się " + circleAreaRounded + " cm^2\n");
+            System.out.println("Pole koła równa się " + circleArea + " cm^2\n");
         }
     }
 
@@ -38,6 +37,6 @@ public class Circle implements Checkable, Visible {
     private void calculateCircleArea() {
         circleArea = Math.PI * Math.pow(r, 2);
         circleArea = Math.round(circleArea * 100);
-        circleAreaRounded = circleArea / 100;
+        circleArea = circleArea / 100;
     }
 }
